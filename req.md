@@ -8,6 +8,33 @@ https://www.etf-charts.com/etf-sparplan-rechner
 
 ===========
 
+This is my website:
+
+www.deangroening.de
+
+Colors I use:
+
+328DAA (RGB 50, 141, 170)
+8ED3F4 /RGB 142, 211, 244)
+
+Font:
+
+Open Sans
+
+Logo for white and black background
+
+==========
+
+(1) I will get you the formula and a excel sheet as soon as I can (tonight or latest on sunday)
+
+(2) I use Chimpify as a content system (www.chimpify.de). I am able to include html or javascript.
+
+(3) I don`t know what, bootstrap is, I am sorry ...
+
+If you need anything else: Just let me know
+
+===========
+
 It´s a calculatur for the compound interest effect.  
 You enter: 
 - how much money you can spend per month 
