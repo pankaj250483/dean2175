@@ -4,32 +4,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .h2 {
-            background-color:blueviolet;
-            border-radius: 8px;
-            color: white;
-            padding: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-    <div class="container mt-5 ">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4 p-4">
-                <h2 class="h2">ETF Sparplan Rechner</h2>
+            <div class="col-md-5">
+                <h1 class="h1">ETF Sparplan Rechner</h1>
             </div>
         </div>
-        <div class="row">
-        <div class="col-md-4 bg-grey p-3 rounded"><b> ETF-Sparrate/Monat</b>
-            <div class="bg-blue"> 0 €/Monat</div>
-            <label for="customRange1" class="form-label"></label>
-            <input type="range" class="form-range" id="customRange1">
-
-        </div>
-        </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 p-3 mt-2 shadow rounded bg-white"><b> ETF-Sparrate/Monat <a href="#"> ⓘ</b></a>
+                <div>
+                    <p class="para mt-2 p-1">500 0 €/Monat</p>
+                </div>
+                <label for="customRange1" class="form-label"></label>
+                <input type="range" class="form-range" id="customRange1">
+
+                <div class="row mt-3">
+                    <div class="col-md-9 mt-2">
+                        <p>Jährliche Wertentwicklung deiner ETF/Jahr <a href="#"> ⓘ</a> </p>
+                    </div>
+                    <div class="col-md-3 rounded bg-secondary text-dark p-2 bg-opacity-25">
+                        <input class="input" type="text" id="fname" name="fname">
+                        <span>%</span>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-7 mt-2">
+                        <p><b>Startwert des Depots</b> <a href="#"> ⓘ</a> </p>
+                    </div>
+                    <div class="col-md-5 rounded bg-secondary text-dark p-2 bg-opacity-25">
+                        <p>0 % </p>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-2 mt-3">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="col-md-10 p-3">
+                            <p><b>ETF-Entnahmeplan mit Kapitalverbrauch</b></p>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
 
 </body>
 
