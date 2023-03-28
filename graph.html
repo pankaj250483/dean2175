@@ -24,15 +24,17 @@
                     <p class="para mt-2 p-1">500 0 €/Monat</p>
                 </div>
                 <label for="customRange1" class="form-label"></label>
-                <input type="range" class="form-range" id="customRange1">
+                <input type="range" class="form-range " id="customRange1" min="0" max="6000" step="50">
 
                 <div class="row mt-3">
                     <div class="col-md-9 mt-2">
                         <p>Jährliche Wertentwicklung deiner ETF/Jahr <a href="#"> ⓘ</a> </p>
                     </div>
                     <div class="col-md-3 rounded bg-secondary text-dark p-2 bg-opacity-25">
-                        <input class="input" type="text" id="fname" name="fname">
+                        <input class="input mt-3" type="text" id="fname" name="fname" placeholder="Rend">
                         <span>%</span>
+                        <button type="button" class="btn button">+</button>
+                        <button type="button" class="btn button2">-</button>
                     </div>
                 </div>
 
