@@ -17,34 +17,37 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container border">
         <div class="row">
             <div class="col-md-5 p-3 mt-2 shadow rounded bg-white"><b> ETF-Sparrate/Monat <a href="#"> ⓘ</b></a>
                 <div>
                     <p class="para mt-2 p-1">500 0 €/Monat</p>
                 </div>
-                <label for="customRange1" class="form-label"></label>
-                <input type="range" class="form-range " id="customRange1" min="0" max="6000" step="50">
 
                 <div class="row mt-3 p-2">
                     <div class="col-md-9 mt-2">
-                        <p>Jährliche Wertentwicklung deiner ETF/Jahr <a href="#"> ⓘ</a> </p>
+                        <p><b>Jährliche Wertentwicklung deiner ETF <a href="#"> ⓘ</a> <br>/Jahr</b> </p>
                     </div>
                     <div class="col-md-3 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
-                        <input class="input mt-3 num" type="number" id="fname" name="fname" placeholder="Rend">
+                        <input class="input mt-3 num" type="text" id="fname" name="fname" placeholder="Rend">
                         <span>%</span>
                         <button type="button" class="btn button p-0 text-center">+</button>
                         <button type="button" class="btn button2 p-0 text-center">-</button>
                     </div>
                 </div>
 
-                <div class="row mt-3">
+
+                <div class="row mt-3 p-2">
                     <div class="col-md-7 mt-2">
-                        <p><b>Startwert des Depots</b> <a href="#"> ⓘ</a> </p>
+                        <p><b>Startwert des Depots</b> <a href="#">ⓘ</a> </p>
                     </div>
-                    <div class="col-md-5 rounded bg-secondary text-dark p-2 bg-opacity-25">
-                        <p>0 % </p>
+                    <div class="col-md-5 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
+                        <input class="input mt-2 num" type="text" id="fname" name="fname" placeholder="Startkapital">
+                        <span> € </span>
+                        <button type="button" class="btn button p-0 text-center">+</button>
+                        <button type="button" class="btn button2 p-0 text-center">-</button>
                     </div>
+
 
                     <div class="row mt-3">
                         <div class="col-md-2 mt-3">
@@ -56,13 +59,47 @@
                         <div class="col-md-10 p-3">
                             <p><b>ETF-Entnahmeplan mit Kapitalverbrauch</b></p>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-
+            <div class="col-md-7">
+                <img src="">
+                <div class="row w-100 m-2 border">
+                    <h6>Dein Alter</h6>
+                    <div class="col-md-2 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
+                        <input class="input mt-2 num" type="text" id="fname" name="fname" placeholder="Alter">
+                        <button type="button" class="btn button p-0 text-center">+</button>
+                        <button type="button" class="btn button2 p-0 text-center">-</button>
                     </div>
 
+                    <div class="col-md-8 mt-2">
+                        <label for="customRange1" class="form-label"></label>
+                        <input type="range" class="form-range " id="customRange1" min="0" max="6000" step="50">
+                    </div>
+                    <div class="col-md-2 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
+                        <input class="input mt-2 num" type="text" id="fname" name="fname"
+                            placeholder="lebenserwartungc">
+                        <button type="button" class="btn button p-0 text-center">+</button>
+                        <button type="button" class="btn button2 p-0 text-center">-</button>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 p1">
+                        <p>Du sparst über NaN Jahre ein Vermögen von</p>
+                        <h2 class="h2">NaN €</h2>
+                    </div>
+                    <div class="col-md-6 p1">
+                        <p>Ab dem Entnahmestart hättest du eine mtl. Rente von</p>
+                        <h2 class="h2">NaN € </h2>
+                    </div>
 
                 </div>
             </div>
+
+
+
         </div>
 
 </body>

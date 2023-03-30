@@ -43,9 +43,6 @@
   align-items: center;
 
 }
-.button:hover{
-  background-color: none!important;
-}
 
 .button2 {
   bottom: 5px;
@@ -140,4 +137,12 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.p1{
+  font-size: 13px;
+}
+
+.h2{
+  color: #355385 ;
 }
