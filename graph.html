@@ -5,6 +5,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 
@@ -19,17 +22,22 @@
 
     <div class="container border">
         <div class="row">
-            <div class="col-md-5 p-3 mt-2 shadow rounded bg-white"><b> ETF-Sparrate/Monat <a href="#"> ⓘ</b></a>
+            <div class="col-md-5 p-3 mt-2 shadow rounded bg-white"><b> ETF-Sparrate/Monat</b> <a class="icon" href="#">ⓘ</a>
                 <div>
                     <p class="para mt-2 p-1">500 0 €/Monat</p>
                 </div>
 
+                <div class="col-md-12 mt-2 p-2">
+                    <label for="customRange1" class="form-label"></label>
+                    <input type="range" class="form-range " id="customRange1" min="0" max="6000" step="50">
+                </div>
+
                 <div class="row mt-3 p-2">
                     <div class="col-md-9 mt-2">
-                        <p><b>Jährliche Wertentwicklung deiner ETF <a href="#"> ⓘ</a> <br>/Jahr</b> </p>
+                        <p><b>Jährliche Wertentwicklung deiner ETF</b> <a class="icon" href="#"> ⓘ</a> <br> <b>/Jahr</b> </p>
                     </div>
                     <div class="col-md-3 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
-                        <input class="input mt-3 num" type="text" id="fname" name="fname" placeholder="Rend">
+                        <input class="input mt-3 num" type="number" id="fname" name="fname" placeholder="Rend">
                         <span>%</span>
                         <button type="button" class="btn button p-0 text-center">+</button>
                         <button type="button" class="btn button2 p-0 text-center">-</button>
@@ -39,10 +47,11 @@
 
                 <div class="row mt-3 p-2">
                     <div class="col-md-7 mt-2">
-                        <p><b>Startwert des Depots</b> <a href="#">ⓘ</a> </p>
+                        <p><b>Startwert des Depots</b> <a class="icon" href="#">ⓘ</a> </p>
                     </div>
+
                     <div class="col-md-5 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
-                        <input class="input mt-2 num" type="text" id="fname" name="fname" placeholder="Startkapital">
+                        <input class="input mt-2 num" type="number" id="fname" name="fname" placeholder="Startkapital">
                         <span> € </span>
                         <button type="button" class="btn button p-0 text-center">+</button>
                         <button type="button" class="btn button2 p-0 text-center">-</button>
@@ -65,10 +74,16 @@
 
             <div class="col-md-7">
                 <img src="">
-                <div class="row w-100 m-2 border">
-                    <h6>Dein Alter</h6>
+
+                <div class="row w-100 ">
+                    <div class="col-md-12 mt-2 ms-2">
+                    <h6>Dein Alter <span style="float: right;">Rentenende</span></h6>
+                </div>
+                
+
+                    <div class="row w-100 m-2">
                     <div class="col-md-2 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
-                        <input class="input mt-2 num" type="text" id="fname" name="fname" placeholder="Alter">
+                        <input class="input mt-2 num" type="number" id="fname" name="fname" placeholder="Alter">
                         <button type="button" class="btn button p-0 text-center">+</button>
                         <button type="button" class="btn button2 p-0 text-center">-</button>
                     </div>
@@ -77,12 +92,14 @@
                         <label for="customRange1" class="form-label"></label>
                         <input type="range" class="form-range " id="customRange1" min="0" max="6000" step="50">
                     </div>
+
                     <div class="col-md-2 rounded bg-secondary text-dark p-2 bg-opacity-25 position-relative btn-c">
-                        <input class="input mt-2 num" type="text" id="fname" name="fname"
+                        <input class="input mt-2 num" type="number" id="fname" name="fname"
                             placeholder="lebenserwartungc">
                         <button type="button" class="btn button p-0 text-center">+</button>
                         <button type="button" class="btn button2 p-0 text-center">-</button>
                     </div>
+                </div>
                 </div>
 
                 <div class="row mt-4">
@@ -92,7 +109,7 @@
                     </div>
                     <div class="col-md-6 p1">
                         <p>Ab dem Entnahmestart hättest du eine mtl. Rente von</p>
-                        <h2 class="h2">NaN € </h2>
+                        <h2 class="h2">NaN € <span> <a class="icon" href="#"> ⓘ</a> </span></h2> 
                     </div>
 
                 </div>

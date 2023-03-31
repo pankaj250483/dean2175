@@ -7,16 +7,17 @@
   font-size: 30px;
   color: white;
   padding: 18px;
+  font-family: open sans;
 
 }
 
 .bg-primary
 {
-  background-color: #355385 !important;
+  background-color: #328DAA !important;
 }
 
 .para {
-  background-color: #355385;
+  background-color: #328DAA;
   display: inline-block;
   color: #ffffff;
   padding: 2px;
@@ -117,7 +118,7 @@
 }
 
 input:checked+.slider {
-  background-color: #355385;
+  background-color: #328DAA;
 }
 
 input:focus+.slider {
@@ -140,9 +141,17 @@ input:checked+.slider:before {
 }
 
 .p1{
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .h2{
-  color: #355385 ;
+  color: #328DAA ;
+  font-family: open sans;
+}
+
+.icon{
+  text-decoration: none;
+  color:#328DAA;
+  font-size: 18px;
+  
 }
