@@ -3,43 +3,32 @@
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
-         'Western', 'Literature', { role: 'annotation' } ],
-        ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-                ['2010', 10, 18, 24, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-        ['2030', 28, 19, 29, 30, 12, 13, '']
-      ]);
+//       var data = google.visualization.arrayToDataTable([
+//         ['Genre', 'Fantasy & Sci Fi', 'Romance' ],
+//         ['2010', 10, 11],
+//         ['2020', 16, 22],
+//         ['2030', 28, 19]
+//       ]);
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Task');
+data.addColumn('number', 'Hours per Day');
+data.addRows([
+  ['Work', 11],
+  ['Eat', 2],
+  ['Commute', 2],
+  ['Watch TV', 2],
+  ['Sleep', {v:7, f:'7.000'}]
+]);
 
       var options = {
         width: 600,
         height: 400,
         legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '50%' },
+        bar: { groupWidth: '75%' },
         isStacked: true,
       };
+
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -49,9 +38,9 @@
                        2]);
 
 
+
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
       chart.draw(view, options);
   }
   </script>
 <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-If we wanted to format the value differently, we could define a formatter and wrap it in a function like this:
