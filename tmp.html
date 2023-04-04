@@ -1,0 +1,42 @@
+<!--
+https://stackoverflow.com/questions/52607218/converting-array-of-objects-into-array-for-google-charts
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        ${devicegroupusers}
+        <c:url value="${UrlRequestMappingConstants.DASHBOARD_DEVICEGROUP_USERS}" var="formUrl"/>
+
+          <script type="text/javascript">
+              google.load("visualization", "1", {packages:["corechart"]});
+              google.setOnLoadCallback(drawChart);
+              function drawChart(devicegroupusers) {
+
+                var devicegroupusers = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
+  result = [["name","count"]],
+  devicegroupusers = JSON.parse(devicegroupusers);
+
+$.each(devicegroupusers ,function(_,devicegroupuser) {
+  result.push(
+    [
+      devicegroupuser["name"],devicegroupuser["count"]
+    ]
+  );
+});
+console.log(result);
+
+                console.log(result);
+
+                  var data = google.visualization.arrayToDataTable(result);
+
+                var options = {
+                  title: 'My Daily Activities'
+                };
+
+                var chart = new google.visualization.BarChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+              }
+            </script>
+          <div id="piechart" style="width: 900px; height: 500px;"></div>
