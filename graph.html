@@ -340,7 +340,10 @@ function calculate()
         wocc[k]= new withoutcapitalconsumption(year,fv,interest,mpayout);
         year=year-1;
     }
-      //   res.innerHTML=JSON.stringify(wocc);
+       res.innerHTML="";
+       res.innerHTML+=JSON.stringify(ap);
+       res.innerHTML+=JSON.stringify(wcc);
+       res.innerHTML+=JSON.stringify(wocc);
 
 // graph process start from here
 
