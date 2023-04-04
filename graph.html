@@ -74,6 +74,7 @@
             </div>
 
             <div class="col-md-7">
+                <div id="piechart" style="width: 900px; min-height: 500px;"></div>
                 <img src="">
 
                 <div class="row w-100 ">
@@ -117,7 +118,10 @@
                     </div>
 
                 </div>
+
+              
             </div>
+         
             <div id="res">
 
             </div>
@@ -127,6 +131,11 @@
 
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <!-- ${devicegroupusers} -->
+        <c:url value="${UrlRequestMappingConstants.DASHBOARD_DEVICEGROUP_USERS}" var="formUrl"/>
 
 <script>
 
@@ -333,12 +342,52 @@ function calculate()
     }
       //   res.innerHTML=JSON.stringify(wocc);
 
+// graph process start from here
+
+google.charts.load("current", {packages:['corechart']});
+              google.setOnLoadCallback(drawChart);
+      
+              function drawChart(devicegroupusers) {
+              
+                // var ap = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
+  result = [["name","count","cb"]],
+  devicegroupusers = JSON.parse(JSON.stringify(ap));
+//   alert("run graph1111");
+
+$.each(devicegroupusers ,function(_,devicegroupuser) {
+  result.push(
+    [
+      devicegroupuser["ob"],devicegroupuser["cb"],devicegroupuser["interest"]
+    ]
+  );
+});
+                  var data = google.visualization.arrayToDataTable(result);
+                  var options = {
+        width: 800,
+        height: 500,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '95%' },
+        isStacked: true,
+      };
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                    //    { calc: "stringify",
+                    //      sourceColumn: 1,
+                    //      type: "string",
+                    //      role: "annotation" },
+                       2]);
+                // var chart = new google.visualization.BarChart(document.getElementById('piechart'));
+                // chart.draw(data, options);
+                var chart = new google.visualization.ColumnChart(document.getElementById("piechart"));
+      chart.draw(view, options);
+              }
+
+// graph process end here
+
+
 
 }
-
-
-
-
 
 </script>
 
