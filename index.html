@@ -258,11 +258,12 @@ constructor(ob,interest,rmz,cb)
 
 class graphdata 
 {
-constructor(year,amount,interest,style2)
+constructor(year,amount,interest,style1,style2)
     {
     this.year=year;
     this.amount=amount;
     this.interest=interest;
+    this.style1=style1;
     this.style2=style2;
     }
 }
@@ -347,7 +348,7 @@ function calculate()
         g=i;
         gob=ic+((g+1)*rmz);
         tint+=parseFloat(interest.toFixed(2));
-        gr[g]=new graphdata(g+1,gob,tint,'color: gray');
+        gr[g]=new graphdata(g+1,gob,tint,'color: red','color: blue');
 
     }
 
@@ -399,7 +400,7 @@ google.charts.load("current", {packages:['corechart']});
               function drawChart(devicegroupusers) {
               
             //    let ap = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
-  result = [["Year","Principle","interest", { role: 'style' }]],
+  result = [["Year","Principle","interest",{ role: 'style' }]],
   devicegroupusers = JSON.parse(JSON.stringify(gr));
  
 
@@ -415,13 +416,13 @@ $.each(devicegroupusers ,function(_,devicegroupuser) {
     var options = {
         width: 800,
         height: 500,
-        legend: { position: 'top', maxLines: 4},
+        legend: { position: 'top', maxLines: 5},
         bar: { groupWidth: '95%' },
-        isStacked: true,
+        isStacked: true
       };
 
       var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1
+      view.setColumns([0,1,2
                     //    ,{ calc: "stringify",
                     //      sourceColumn: 1,
                     //      type: "string",

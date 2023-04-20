@@ -49,3 +49,5 @@ than the calculation will show you two things:
 
 It should be in java script or in html, that I can put it easily on my website
 
+
+https://developers.google.com/chart/interactive/docs/gallery/columnchart#stacked-column-charts
