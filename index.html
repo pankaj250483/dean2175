@@ -256,6 +256,17 @@ constructor(ob,interest,rmz,cb)
     }
 }
 
+class graphdata 
+{
+constructor(year,amount,interest,style2)
+    {
+    this.year=year;
+    this.amount=amount;
+    this.interest=interest;
+    this.style2=style2;
+    }
+}
+
 class withcapitalconsumption
 {
     constructor(month,ob,mremoval,interest,cb)
@@ -312,6 +323,8 @@ function calculate()
     //
     var ob=ic;
     ap=[];
+    tint=0;
+    gr=[];
     for(i=0;i<at;i++)
     {
         if(pm==0)
@@ -329,6 +342,13 @@ function calculate()
         
         ap[i]= new accumulationphase(ob,interest,rmz,cb);
         ob=cb;
+
+        //Updating GR Array for Graph Data
+        g=i;
+        gob=ic+((g+1)*rmz);
+        tint+=parseFloat(interest.toFixed(2));
+        gr[g]=new graphdata(g+1,gob,tint,'color: gray');
+
     }
 
     // Calculating Withdrawal plan with capital consumption
@@ -352,7 +372,6 @@ function calculate()
         ob=cb;
     }
 
-
     // Calculating Withdrawal plan without capital consumption (wocc)
     //
     //
@@ -366,7 +385,8 @@ function calculate()
         wocc[k]= new withoutcapitalconsumption(year,fv,interest,mpayout);
         year=year-1;
     }
-    //    res.innerHTML="";
+         res.innerHTML="";
+         res.innerHTML+=JSON.stringify(gr);
     //    res.innerHTML+=JSON.stringify(ap);
     //    res.innerHTML+=JSON.stringify(wcc);
     //    res.innerHTML+=JSON.stringify(wocc);
@@ -379,48 +399,30 @@ google.charts.load("current", {packages:['corechart']});
               function drawChart(devicegroupusers) {
               
             //    let ap = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
-  result = [["Principle","interest"]],
-  devicegroupusers = JSON.parse(JSON.stringify(ap));
-//   alert("run graph1111");
+  result = [["Year","Principle","interest", { role: 'style' }]],
+  devicegroupusers = JSON.parse(JSON.stringify(gr));
+ 
 
 $.each(devicegroupusers ,function(_,devicegroupuser) {
   result.push(
     [
-      devicegroupuser["ob"],devicegroupuser["interest"]
+    devicegroupuser["year"],devicegroupuser["amount"],devicegroupuser["interest"],devicegroupuser["style2"]
     ]
   );
 });
 
-// testing code
-//
-//
-
-devicegroupusers = JSON.parse(JSON.stringify(wocc));
-
-$.each(devicegroupusers ,function(_,devicegroupuser) {
-  result.push(
-    [
-    devicegroupuser["interest"],devicegroupuser["fv"]
-    ]
-  );
-});
-
-//
-//
-//
-
-                  var data = google.visualization.arrayToDataTable(result);
-                  var options = {
+    var data = google.visualization.arrayToDataTable(result);
+    var options = {
         width: 800,
         height: 500,
-        legend: { position: 'top', maxLines: 3 },
+        legend: { position: 'top', maxLines: 4},
         bar: { groupWidth: '95%' },
         isStacked: true,
       };
 
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1
-                    //    { calc: "stringify",
+                    //    ,{ calc: "stringify",
                     //      sourceColumn: 1,
                     //      type: "string",
                     //      role: "annotation" },
