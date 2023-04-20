@@ -378,18 +378,37 @@ google.charts.load("current", {packages:['corechart']});
       
               function drawChart(devicegroupusers) {
               
-                // var ap = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
-  result = [["name","count","cb"]],
+            //    let ap = '[{"name":"Default","count":2},{"name":"IT","count":1},{"name":"R\u0026D","count":1}]', 
+  result = [["Principle","interest"]],
   devicegroupusers = JSON.parse(JSON.stringify(ap));
 //   alert("run graph1111");
 
 $.each(devicegroupusers ,function(_,devicegroupuser) {
   result.push(
     [
-      devicegroupuser["ob"],devicegroupuser["cb"],devicegroupuser["interest"]
+      devicegroupuser["ob"],devicegroupuser["interest"]
     ]
   );
 });
+
+// testing code
+//
+//
+
+devicegroupusers = JSON.parse(JSON.stringify(wocc));
+
+$.each(devicegroupusers ,function(_,devicegroupuser) {
+  result.push(
+    [
+    devicegroupuser["interest"],devicegroupuser["fv"]
+    ]
+  );
+});
+
+//
+//
+//
+
                   var data = google.visualization.arrayToDataTable(result);
                   var options = {
         width: 800,
@@ -400,12 +419,12 @@ $.each(devicegroupusers ,function(_,devicegroupuser) {
       };
 
       var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
+      view.setColumns([0, 1
                     //    { calc: "stringify",
                     //      sourceColumn: 1,
                     //      type: "string",
                     //      role: "annotation" },
-                       2]);
+                       ]);
                 // var chart = new google.visualization.BarChart(document.getElementById('piechart'));
                 // chart.draw(data, options);
                 var chart = new google.visualization.ColumnChart(document.getElementById("piechart"));
