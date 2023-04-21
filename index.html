@@ -325,6 +325,7 @@ function calculate()
     var ob=ic;
     ap=[];
     tint=0;
+    var yr=ag;
     gr=[];
     for(i=0;i<at;i++)
     {
@@ -345,10 +346,12 @@ function calculate()
         ob=cb;
 
         //Updating GR Array for Graph Data
-        g=i;
+        var g=i;
+
         gob=ic+((g+1)*rmz);
         tint+=parseFloat(interest.toFixed(2));
-        gr[g]=new graphdata(g+1,gob,tint,'color: red','color: blue');
+        gr[g]=new graphdata(yr,gob,tint,'color: blue','color: red');
+        yr++;
 
     }
 
@@ -386,6 +389,40 @@ function calculate()
         wocc[k]= new withoutcapitalconsumption(year,fv,interest,mpayout);
         year=year-1;
     }
+
+    //
+    // Updating Withdrawl Amount to Graph Array GR[]
+    //
+    y=gr[gr.length-1].year;
+
+    if(capitalconsumption.checked==true)
+    {
+        for(z=0;z<wcc.length;z+=12)
+        {
+            g+=1;
+         
+            tmpint=0;
+            maxix=z+12;
+            for(ix=z;ix<maxix;ix++)
+                if(ix<wcc.length) tmpint+=wcc[ix].interest;
+
+            gr[g]=new graphdata(yr,wcc[z].ob,tmpint,'color: yellow','color: red');
+            yr++;
+        }
+
+    }
+    else
+    {
+        for(z=0;z<wocc.length;z++)
+        {
+            g+=1;
+            gr[g]=new graphdata(yr,wocc[z].ob,wocc[z].interest,'color: blue','color: red');
+            yr++;
+        }
+    }
+
+
+
          res.innerHTML="";
          res.innerHTML+=JSON.stringify(gr);
     //    res.innerHTML+=JSON.stringify(ap);
@@ -414,10 +451,10 @@ $.each(devicegroupusers ,function(_,devicegroupuser) {
 
     var data = google.visualization.arrayToDataTable(result);
     var options = {
-        width: 800,
+        width: 950,
         height: 500,
         legend: { position: 'top', maxLines: 5},
-        bar: { groupWidth: '95%' },
+        bar: { groupWidth: '80%' },
         isStacked: true
       };
 
