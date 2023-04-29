@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+input
+{
+  text-align: center !important;
+}
+
 .h1 {
   border-radius: 8px;
   font-size: 30px;
@@ -219,7 +224,7 @@ input[type=number] {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 p-3 mt-2 shadow rounded bg-white"><b> ETF-Sparrate/Monat</b> <div>
-                    <p class="para mt-2 p-1">500 0 €/Monat</p>
+                    <!-- <p class="para mt-2 p-1">500 0 €/Monat</p> -->
                 </div>
 
                 <div class="col-md-12 mt-2 p-2">
@@ -305,7 +310,7 @@ input[type=number] {
 
                 <div class="row mt-4">
                     <div class="col-md-6 p1">
-                        <p>Du sparst über NaN Jahre ein Vermögen von</p>
+                        <p>Du sparst über <span id=diff>100</span> Jahre ein Vermögen von</p>
                         <h2 class="h2" id="fcapital">NaN €</h2>
                     </div>
                     <div class="col-md-6 p1">
@@ -509,6 +514,7 @@ function calculate()
     pickingage.max=rt;
 
     var at=pag-ag;
+    diff.innerHTML=rt-ag;
     var wp=rt-pag;
     var mwp=wp*12;
     var rmz=sv*12;
