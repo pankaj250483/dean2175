@@ -711,9 +711,11 @@ $.each(devicegroupusers ,function(_,devicegroupuser) {
 
 // graph process end here
 
-        colorReplace("#3366cc", "#328DAA");      
-        colorReplace("#dc3912", "#8ED3F4");      
-
+        // colorReplace("#3366cc", "#328DAA");      
+        // colorReplace("#dc3912", "#8ED3F4");      
+        
+        const matches = document.querySelectorAll("rect");
+        res.innerHTML=matches[2].style.backgroundColor;
 }
 
 
